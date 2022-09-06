@@ -1,0 +1,41 @@
+Alice
+Bob		Guitar		Mumbai		SRI-D		IITG
+Cassy		Dancing		Delhi		SRI-B		IITB
+Damon		Football	Bangalore	Google		IITD
+Elliot		Singing		Pune		Microsoft	IITK
+Fahad		Cricket		Hyderabad	Amazon		IITR
+Gayatri		Reading		Jaipur
+Hannah		Cooking
+Ishu		Movies
+Jake
+Keyan
+Laimer
+Manav
+Nirav
+Ojas
+Paras
+Rythm
+Shaurya
+Tanvi
+Usha
+Vijay
+Yashvi
+Zach
+Andy
+Emma
+Fritijof
+Gunther
+Heena
+Ishita
+Jay
+Kevin
+Lara
+Manvi
+Nivan
+Olly
+Preetha
+Raj
+Shekhar
+Tanya
+Ulhas
+Vihaan

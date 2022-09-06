@@ -1,0 +1,1195 @@
+CREATE (Alice:USER{name:'Alice',sex:'F',Age:'20'})
+CREATE (Bob:USER{name:'Bob',sex:'M',Age:'23'})
+CREATE (Cassy:USER{name:'Cassy',sex:'F',Age:'24'})
+CREATE (Damon:USER{name:'Damon',sex:'M',Age:'29'})
+CREATE (Elliot:USER{name:'Elliot',sex:'M',Age:'16'})
+CREATE (Fahad:USER{name:'Fahad',sex:'M',Age:'22'})
+CREATE (Gayatri:USER{name:'Gayatri',sex:'F',Age:'21'})
+CREATE (Hannah:USER{name:'Hannah',sex:'F',Age:'23'})
+CREATE (Ishu:USER{name:'Ishu',sex:'M',Age:'25'})
+CREATE (Jake:USER{name:'Jake',sex:'M',Age:'26'})
+CREATE (Keyan:USER{name:'Keyan',sex:'M',Age:'32'})
+CREATE (Laimer:USER{name:'Laimer',sex:'M',Age:'30'})
+CREATE (Manav:USER{name:'Manav',sex:'M',Age:'34'})
+CREATE (Nirav:USER{name:'Nirav',sex:'M',Age:'39'})
+CREATE (Ojas:USER{name:'Ojas',sex:'M',Age:'36'})
+CREATE (Paras:USER{name:'Paras',sex:'M',Age:'42'})
+CREATE (Rythm:USER{name:'Rythm',sex:'M',Age:'41'})
+CREATE (Shaurya:USER{name:'Shaurya',sex:'M',Age:'23'})
+CREATE (Tanvi:USER{name:'Tanvi',sex:'F',Age:'25'})
+CREATE (Usha:USER{name:'Usha',sex:'F',Age:'16'})
+CREATE (Vijay:USER{name:'Vijay',sex:'M',Age:'22'})
+CREATE (Yashvi:USER{name:'Yashvi',sex:'F',Age:'20'})
+CREATE (Zach:USER{name:'Zach',sex:'M',Age:'24'})
+CREATE (Andy:USER{name:'Andy',sex:'M',Age:'29'})
+CREATE (Emma:USER{name:'Emma',sex:'F',Age:'16'})
+CREATE (Fritijof:USER{name:'Fritijof',sex:'M',Age:'22'})
+CREATE (Gunther:USER{name:'Gunther',sex:'M',Age:'21'})
+CREATE (Heena:USER{name:'Heena',sex:'F',Age:'23'})
+CREATE (Ishita:USER{name:'Ishita',sex:'F',Age:'25'})
+CREATE (Jay:USER{name:'Jay',sex:'M',Age:'26'})
+CREATE (Kevin:USER{name:'Kevin',sex:'M',Age:'32'})
+CREATE (Lara:USER{name:'Lara',sex:'M',Age:'30'})
+CREATE (Manvi:USER{name:'Manvi',sex:'F',Age:'34'})
+CREATE (Nivan:USER{name:'Nivan',sex:'M',Age:'39'})
+CREATE (Olly:USER{name:'Olly',sex:'M',Age:'36'})
+CREATE (Preetha:USER{name:'Preetha',sex:'F',Age:'42'})
+CREATE (Raj:USER{name:'Raj',sex:'M',Age:'41'})
+CREATE (Shekhar:USER{name:'Shekhar',sex:'M',Age:'23'})
+CREATE (Tanya:USER{name:'Tanya',sex:'F',Age:'25'})
+CREATE (Ulhas:USER{name:'Ulhas',sex:'F',Age:'16'})
+CREATE (Vihaan:USER{name:'Vihaan',sex:'M',Age:'22'});
+
+
+MATCH (a:USER),(b:USER)
+Where a.name='Bob' AND (	  b.name='Damon'  OR
+			  b.name='Fahad'  OR
+			  b.name='Hannah'  OR
+			  b.name='Laimer'  OR
+			  b.name='Manav'  OR
+			  b.name='Tanvi'  OR
+			  b.name='Vijay'  OR
+			  b.name='Emma'  OR
+			  b.name='Gunther' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Cassy' AND (	  b.name='Damon'  OR
+			  b.name='Elliot'  OR
+			  b.name='Ishu'  OR
+			  b.name='Paras'  OR
+			  b.name='Rythm'  OR
+			  b.name='Vijay'  OR
+			  b.name='Andy'  OR
+			  b.name='Olly' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Damon' AND (	  b.name='Vihaan'  OR
+			  b.name='Tanya'  OR
+			  b.name='Shekhar'  OR
+			  b.name='Raj'  OR
+			  b.name='Ishita'  OR
+			  b.name='Zach' )
+Create (a)-[:FRIEND]->(b);
+
+
+MATCH (a:USER),(b:USER)
+Where a.name='Elliot' AND (	  b.name='Fritijof'  OR
+			  b.name='Gayatri'  OR
+			  b.name='Laimer'  OR
+			  b.name='Manav'  OR
+			  b.name='Nirav'  OR
+			  b.name='Paras' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Fahad' AND (	  b.name='Jake'  OR
+			  b.name='Keyan'  OR
+			  b.name='Vijay'  OR
+			  b.name='Emma'  OR
+			  b.name='Ishita'  OR
+			  b.name='Jay' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Gayatri' AND (	  b.name='Hannah'  OR
+			  b.name='Rythm'  OR
+			  b.name='Yashvi'  OR
+			  b.name='Heena'  OR
+			  b.name='Vihaan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Hannah' AND (	  b.name='Laimer'  OR
+			  b.name='Usha'  OR
+			  b.name='Raj' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Ishu' AND (	  b.name='Jake'  OR
+			  b.name='Ojas'  OR
+			  b.name='Emma' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Jake' AND (	  b.name='Nirav'  OR
+			  b.name='Vijay'  OR
+			  b.name='Emma'  OR
+			  b.name='Shekhar' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Keyan' AND (	  b.name='Paras'  OR
+			  b.name='Gunther'  OR
+			  b.name='Shaurya'  OR
+			  b.name='Nivan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Laimer' AND (	  b.name='Usha'  OR
+			  b.name='Andy'  OR
+			  b.name='Zach'  OR
+			  b.name='Fritijof'  OR
+			  b.name='Lara' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Manav' AND (	  b.name='Lara'  OR
+			  b.name='Ojas'  OR
+			  b.name='Rythm'  OR
+			  b.name='Preetha'  OR
+			  b.name='Tanya' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Nirav' AND (	  b.name='Lara'  OR
+			  b.name='Gunther'  OR
+			  b.name='Vijay' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Ojas' AND (	  b.name='Shaurya'  OR
+			  b.name='Tanvi'  OR
+			  b.name='Tanya'  OR
+			  b.name='Ulhas' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Paras' AND ( b.name='Kevin'  OR
+			  b.name='Manvi' )
+Create (a)-[:FRIEND]->(b),(b)-[:FRIEND]->(a);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Rythm' AND (	  b.name='Lara'  OR
+			  b.name='Nivan'  OR
+			  b.name='Jay' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Shaurya' AND (	  b.name='Tanvi'  OR
+			  b.name='Fritijof'  OR
+			  b.name='Gunther'  OR
+			  b.name='Tanya'  OR
+			  b.name='Vihaan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Tanvi' AND (	  b.name='Vijay'  OR
+			  b.name='Gunther'  OR
+			  b.name='Manvi'  OR
+			  b.name='Preetha')
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Usha' AND (	  b.name='Yashvi'  OR
+			  b.name='Andy'  OR
+			  b.name='Manvi'  OR
+			  b.name='Shekhar' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Vijay' AND (	  b.name='Heena'  OR
+			  b.name='Kevin'  OR
+			  b.name='Ishita'  OR
+			  b.name='Olly' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Yashvi' AND (	  b.name='Olly'  OR
+			  b.name='Raj'  OR
+			  b.name='Preetha' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Zach' AND (	  b.name='Andy'  OR
+			  b.name='Heena'  OR
+			  b.name='Vihaan'  OR
+			  b.name='Preetha' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Andy' AND (	  b.name='Fritijof'  OR
+			  b.name='Kevin'  OR
+			  b.name='Nivan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Emma' AND (	  b.name='Manvi'  OR
+			  b.name='Ulhas' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Fritijof' AND (	  b.name='Gunther'  OR
+			  b.name='Tanya' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Gunther' AND (	  b.name='Ishita'  OR
+			  b.name='Lara'  OR
+			  b.name='Jay' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Heena' AND (	  b.name='Kevin'  OR
+			  b.name='Lara'  )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Ishita' AND (	  b.name='Jay'  OR
+			  b.name='Nivan'  OR
+			  b.name='Shekhar' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Jay' AND (	  b.name='Nivan'  OR
+			  b.name='Raj'  OR
+			  b.name='Ulhas' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Kevin' AND (	  b.name='Preetha'  OR
+			  b.name='Shekhar' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Lara' AND (	  b.name='Manvi'  OR
+			  b.name='Nivan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Manvi' AND (	  b.name='Preetha'  OR
+			  b.name='Tanya' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Nivan' AND (	  b.name='Olly'  OR
+			  b.name='Preetha' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Olly' AND (	  b.name='Raj'  OR
+			  b.name='Tanya' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Preetha' AND (b.name='Vihaan' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Raj' AND (	  b.name='Vihaan'  OR
+			  b.name='Tanya' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Shekhar' AND (	  b.name='Vihaan'  OR
+			  b.name='Ulhas' )
+Create (a)-[:FRIEND]->(b);
+
+MATCH (a:USER),(b:USER)
+Where a.name='Tanya' AND (	  b.name='Vihaan'
+			  )
+Create (a)-[:FRIEND]->(b);
+
+CREATE (Guitar:HOBBY{name:'Guitar'})
+CREATE (Dancing:HOBBY{name:'Dancing'})
+CREATE (Football:HOBBY{name:'Football'})
+CREATE (Singing:HOBBY{name:'Singing'})
+CREATE (Cricket:HOBBY{name:'Cricket'})
+CREATE (Reading:HOBBY{name:'Reading'})
+CREATE (Cooking:HOBBY{name:'Cooking'})
+CREATE (Movies:HOBBY{name:'Movies'})
+
+CREATE (Mumbai:NATIVEPLACE{city:'Mumbai'})
+CREATE (Delhi:NATIVEPLACE{city:'Delhi'})
+CREATE (Bangalore:NATIVEPLACE{city:'Bangalore'})
+CREATE (Pune:NATIVEPLACE{city:'Pune'})
+CREATE (Hyderabad:NATIVEPLACE{city:'Hyderabad'})
+CREATE (Jaipur:NATIVEPLACE{city:'Jaipur'})
+
+CREATE (SRID:WORKPLACE{name:'SRI-D'})
+CREATE (SRIB:WORKPLACE{name:'SRI-B'})
+CREATE (Google:WORKPLACE{name:'Google'})
+CREATE (Microsoft:WORKPLACE{name:'Microsoft'})
+CREATE (Amazon:WORKPLACE{name:'Amazon'})
+
+CREATE (IITG:COLLEGE{name:'IITG'})
+CREATE (IITB:COLLEGE{name:'IITB'})
+CREATE (IITD:COLLEGE{name:'IITD'})
+CREATE (IITK:COLLEGE{name:'IITK'})
+CREATE (IITR:COLLEGE{name:'IITR'});
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Alice" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Alice" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Alice" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Alice" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Alice" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Bob" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Bob" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Bob" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Bob" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Cassy" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Cassy" AND b.city = "Hyderabad"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Cassy" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Cassy" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Damon" AND b.name = "Movies"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Damon" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Damon" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Damon" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Elliot" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Elliot" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Elliot" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Elliot" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Fahad" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Fahad" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Fahad" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Fahad" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Gayatri" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Gayatri" AND b.city = "Hyderabad"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Gayatri" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Gayatri" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Hannah" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Hannah" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Hannah" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Hannah" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Hannah" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Ishu" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Ishu" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Ishu" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Ishu" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Jake" AND b.name = "Cooking"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Jake" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Jake" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Jake" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Keyan" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Keyan" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Keyan" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Keyan" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Laimer" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Laimer" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Laimer" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Laimer" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Manav" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Manav" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Manav" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Manav" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Nirav" AND b.name = "Movies"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Nirav" AND b.city = "Hyderabad"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Nirav" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Nirav" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Ojas" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Ojas" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Ojas" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Ojas" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Paras" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Paras" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Paras" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Paras" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Rythm" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Rythm" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Rythm" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Rythm" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Shaurya" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Shaurya" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Shaurya" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Shaurya" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Shaurya" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Shaurya" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Tanvi" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Tanvi" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Tanvi" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Tanvi" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Usha" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Usha" AND b.name = "Movies"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Usha" AND b.name = "Cooking"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Usha" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Usha" AND b.city = "Hyderabad"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Usha" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Usha" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Vijay" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Vijay" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Vijay" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Vijay" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Yashvi" AND b.name = "Movies"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Yashvi" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Yashvi" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Yashvi" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Zach" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Zach" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Zach" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Zach" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Andy" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Andy" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Andy" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Andy" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Andy" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Emma" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Emma" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Emma" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Emma" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Emma" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Fritijof" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Fritijof" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Fritijof" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Fritijof" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Gunther" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Gunther" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Gunther" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Gunther" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Heena" AND b.name = "Cooking"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Heena" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Heena" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Heena" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Ishita" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Ishita" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Ishita" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Ishita" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Jay" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Jay" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Jay" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Jay" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Kevin" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Kevin" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Kevin" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Kevin" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Lara" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Lara" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Lara" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Lara" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Manvi" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Manvi" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Manvi" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Manvi" AND b.name = "IITG"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Nivan" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Nivan" AND b.city = "Jaipur"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Nivan" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Nivan" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Olly" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Olly" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Olly" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Olly" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Preetha" AND b.name = "Cooking"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Preetha" AND b.name = "Reading"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Preetha" AND b.city = "Hyderabad"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Preetha" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Preetha" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Raj" AND b.name = "Movies"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Raj" AND b.name = "Singing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Raj" AND b.city = "Mumbai"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Raj" AND b.name = "Google"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Raj" AND b.name = "IITB"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Shekhar" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Shekhar" AND b.city = "Delhi"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Shekhar" AND b.name = "SRI-D"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Shekhar" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Tanya" AND b.name = "Dancing"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Tanya" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Tanya" AND b.name = "Amazon"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Tanya" AND b.name = "IITD"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Ulhas" AND b.name = "Cricket"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Ulhas" AND b.city = "Pune"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Ulhas" AND b.name = "Microsoft"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Ulhas" AND b.name = "IITR"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+
+
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Vihaan" AND b.name = "Guitar"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:HOBBY)
+WHERE a.name = "Vihaan" AND b.name = "Football"
+CREATE (a)-[:HAS_HOBBY]->(b);
+
+MATCH (a:USER), (b:NATIVEPLACE)
+WHERE a.name = "Vihaan" AND b.city = "Bangalore"
+CREATE (a)-[:IS_FROM]->(b);
+
+MATCH (a:USER), (b:WORKPLACE)
+WHERE a.name = "Vihaan" AND b.name = "SRI-B"
+CREATE (a)-[:WORKS_AT]->(b);
+
+MATCH (a:USER), (b:COLLEGE)
+WHERE a.name = "Vihaan" AND b.name = "IITK"
+CREATE (a)-[:STUDIED_AT]->(b);
+
+MATCH (a:USER)-[:FRIEND]-(:USER)-[:FRIEND]-(b:USER)
+WHERE a.name="Gunther" AND a<>b AND NOT (a)-[:FRIEND]-(b)
+RETURN DISTINCT b.name as Recommended, COUNT(b) as Score
+ORDER BY count(b) DESC
+LIMIT 10;
+
+MATCH (a:USER)-[:HAS_HOBBY]-(:HOBBY)-[:HAS_HOBBY]-(b:USER)
+WHERE a.name="Gunther" AND a<>b AND NOT (a)-[:FRIEND]-(b)
+RETURN DISTINCT b.name as Recommended
+LIMIT 10;
+
+MATCH (a:USER)-[:WORKS_AT]-(:WORKPLACE)-[:WORKS_AT]-(b:USER)
+WHERE a.name="Gunther" AND a<>b AND NOT (a)-[:FRIEND]-(b)
+RETURN DISTINCT b.name as Recommended
+LIMIT 10;
+
+MATCH (a:USER)-[:IS_FROM]-(:NATIVEPLACE)-[:IS_FROM]-(b:USER)
+WHERE a.name="Gunther" AND a<>b AND NOT (a)-[:FRIEND]-(b)
+RETURN DISTINCT b.name as Recommended
+LIMIT 10;
+
+MATCH (a:USER)-[:STUDIED_AT]-(:COLLEGE)-[:STUDIED_AT]-(b:USER)
+WHERE a.name="Gunther" AND a<>b AND NOT (a)-[:FRIEND]-(b)
+RETURN DISTINCT b.name as Recommended
+LIMIT 10;
+
+MATCH (a:USER),
+(a)-[rel:FRIEND|HAS_HOBBY|IS_FROM|WORKS_AT|STUDIED_AT]-()-[]-(b:USER)
+WHERE a.name="Shaurya" AND NOT (a)-[:FRIEND]-(b) AND a <> b
+WITH DISTINCT b.name AS Recommendations, CASE
+WHEN type(rel) = "FRIEND" THEN count(rel)*0.2
+WHEN type(rel) = "HAS_HOBBY" THEN count(rel)*0.1
+WHEN type(rel) = "IS_FROM" THEN count(rel)*0.2
+WHEN type(rel) = "WORKS_AT" THEN count(rel)*0.3
+WHEN type(rel) = "STUDIED_AT" THEN count(rel)*0.2
+END AS score
+WITH DISTINCT Recommendations, sum(score) as score
+RETURN Recommendations, score
+ORDER BY score DESC
+LIMIT 10;
+
